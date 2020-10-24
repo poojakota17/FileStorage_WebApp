@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import AuthStateApp from './App';
 import * as serviceWorker from './serviceWorker';
-import Amplify from 'aws-amplify';
-import config from './aws-exports';
-Amplify.configure(config);
+import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <AuthStateApp />
+    </React.StrictMode>,
   document.getElementById('root')
+ 
 );
 
 // If you want your app to work offline and load faster, you can change

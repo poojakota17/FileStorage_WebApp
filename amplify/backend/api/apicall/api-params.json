@@ -1,0 +1,42 @@
+{
+    "paths": [
+        {
+            "name": "/items",
+            "lambdaFunction": "uploadlambdas3",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/items"
+        }
+    ],
+    "resourceName": "apicall",
+    "apiName": "apicall",
+    "functionArns": [
+        {
+            "lambdaFunction": "uploadlambdas3"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-webapp-newdev-10150-authRole",
+        "unAuthRoleName": "amplify-webapp-newdev-10150-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "uploadlambdas3",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

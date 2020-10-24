@@ -1,0 +1,158 @@
+{
+    "resource":"/items",
+    "path":"/items",
+    "httpMethod":"POST",
+    "headers":{
+       "Accept":"*/*",
+       "Accept-Encoding":"gzip, deflate, br",
+       "Accept-Language":"en-GB,en-US;q=0.9,en;q=0.8",
+       "Authorization":"eyJraWQiOiJya2NsQnp0djlxWjIrVjh6ajIzTjVmak01SkhwcFY5NFowMHo4bkpFemY4PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzNWIzYjNiMi1iNWIwLTQxNGEtODU5Ni1lYjFiZjJiMmRjNTQiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfMkdyQlZDRkp2IiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjpmYWxzZSwiY29nbml0bzp1c2VybmFtZSI6InBvb2phIiwiYXVkIjoiNm9lbzluOHRyaTZrOGUzc2dhdGd1dTNnb3YiLCJldmVudF9pZCI6IjhmMzZlODc1LWQwNjctNDA4Ni1iZDQxLTQ5MTA0NWE5NzE0NSIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjAyODAwODk2LCJwaG9uZV9udW1iZXIiOiIrMTM1MjMyODE1NjciLCJleHAiOjE2MDI4MDQ0OTYsImlhdCI6MTYwMjgwMDg5NiwiZW1haWwiOiJwb29qYXByYXNhbm5hbjE4QGdtYWlsLmNvbSJ9.TmcvqnW0B1OYmrJNU1oc-j8iwzvHoucs0MfqWhIdLw6GgcMvwBx9rV4dBzaXXG03u9Cmqku5Xu5QVzYa83TfW0MUxm_qTC7kqPjnyVQ5Y5IH9H8u0Vd4rw9YAX7kQj_9H7FfB0KXifV-5zzxIGKzPlVmA7E4dda3GrxJRT-KZ72spCDeJVsZAqjcDTCu7SpE6zxm9U0XgZwNVYmUFriBbl8p8WrZ_CsZTbghigSfWtvNz8ip2QiyX5lpj6zVcZ2m2S0UgBow73a6qWMfYu_VImAk8nAZm8PRtnH0RpfQBmzpu0YoKEBSpTyAr50JZND28VmI_8wcMyudLLOZ978W_g",
+       "CloudFront-Forwarded-Proto":"https",
+       "CloudFront-Is-Desktop-Viewer":"true",
+       "CloudFront-Is-Mobile-Viewer":"false",
+       "CloudFront-Is-SmartTV-Viewer":"false",
+       "CloudFront-Is-Tablet-Viewer":"false",
+       "CloudFront-Viewer-Country":"US",
+       "content-type":"multipart/form-data; boundary=----WebKitFormBoundaryb5wHOhnA6i4sU9e8",
+       "Host":"oie96n6v9e.execute-api.us-east-1.amazonaws.com",
+       "origin":"http://ec2-50-18-18-239.us-west-1.compute.amazonaws.com:3000",
+       "Referer":"http://ec2-50-18-18-239.us-west-1.compute.amazonaws.com:3000/",
+       "sec-fetch-dest":"empty",
+       "sec-fetch-mode":"cors",
+       "sec-fetch-site":"cross-site",
+       "User-Agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36",
+       "Via":"2.0 60e5707b1bd322c0a9800126f0791b57.cloudfront.net (CloudFront)",
+       "X-Amz-Cf-Id":"EU-argCOfHLpJ7oZ6AJQi39asxyy0AZ6h9HMoLTrcMABgdL9AExmTw==",
+       "X-Amzn-Trace-Id":"Root=1-5f88cd17-3d912e62529c4102528ae1f0",
+       "X-Forwarded-For":"73.231.31.7, 64.252.173.131",
+       "X-Forwarded-Port":"443",
+       "X-Forwarded-Proto":"https"
+    },
+    "multiValueHeaders":{
+       "Accept":[
+          "*/*"
+       ],
+       "Accept-Encoding":[
+          "gzip, deflate, br"
+       ],
+       "Accept-Language":[
+          "en-GB,en-US;q=0.9,en;q=0.8"
+       ],
+       "Authorization":[
+          "eyJraWQiOiJya2NsQnp0djlxWjIrVjh6ajIzTjVmak01SkhwcFY5NFowMHo4bkpFemY4PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzNWIzYjNiMi1iNWIwLTQxNGEtODU5Ni1lYjFiZjJiMmRjNTQiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfMkdyQlZDRkp2IiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjpmYWxzZSwiY29nbml0bzp1c2VybmFtZSI6InBvb2phIiwiYXVkIjoiNm9lbzluOHRyaTZrOGUzc2dhdGd1dTNnb3YiLCJldmVudF9pZCI6IjhmMzZlODc1LWQwNjctNDA4Ni1iZDQxLTQ5MTA0NWE5NzE0NSIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjAyODAwODk2LCJwaG9uZV9udW1iZXIiOiIrMTM1MjMyODE1NjciLCJleHAiOjE2MDI4MDQ0OTYsImlhdCI6MTYwMjgwMDg5NiwiZW1haWwiOiJwb29qYXByYXNhbm5hbjE4QGdtYWlsLmNvbSJ9.TmcvqnW0B1OYmrJNU1oc-j8iwzvHoucs0MfqWhIdLw6GgcMvwBx9rV4dBzaXXG03u9Cmqku5Xu5QVzYa83TfW0MUxm_qTC7kqPjnyVQ5Y5IH9H8u0Vd4rw9YAX7kQj_9H7FfB0KXifV-5zzxIGKzPlVmA7E4dda3GrxJRT-KZ72spCDeJVsZAqjcDTCu7SpE6zxm9U0XgZwNVYmUFriBbl8p8WrZ_CsZTbghigSfWtvNz8ip2QiyX5lpj6zVcZ2m2S0UgBow73a6qWMfYu_VImAk8nAZm8PRtnH0RpfQBmzpu0YoKEBSpTyAr50JZND28VmI_8wcMyudLLOZ978W_g"
+       ],
+       "CloudFront-Forwarded-Proto":[
+          "https"
+       ],
+       "CloudFront-Is-Desktop-Viewer":[
+          "true"
+       ],
+       "CloudFront-Is-Mobile-Viewer":[
+          "false"
+       ],
+       "CloudFront-Is-SmartTV-Viewer":[
+          "false"
+       ],
+       "CloudFront-Is-Tablet-Viewer":[
+          "false"
+       ],
+       "CloudFront-Viewer-Country":[
+          "US"
+       ],
+       "content-type":[
+          "multipart/form-data; boundary=----WebKitFormBoundaryb5wHOhnA6i4sU9e8"
+       ],
+       "Host":[
+          "oie96n6v9e.execute-api.us-east-1.amazonaws.com"
+       ],
+       "origin":[
+          "http://ec2-50-18-18-239.us-west-1.compute.amazonaws.com:3000"
+       ],
+       "Referer":[
+          "http://ec2-50-18-18-239.us-west-1.compute.amazonaws.com:3000/"
+       ],
+       "sec-fetch-dest":[
+          "empty"
+       ],
+       "sec-fetch-mode":[
+          "cors"
+       ],
+       "sec-fetch-site":[
+          "cross-site"
+       ],
+       "User-Agent":[
+          "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36"
+       ],
+       "Via":[
+          "2.0 60e5707b1bd322c0a9800126f0791b57.cloudfront.net (CloudFront)"
+       ],
+       "X-Amz-Cf-Id":[
+          "EU-argCOfHLpJ7oZ6AJQi39asxyy0AZ6h9HMoLTrcMABgdL9AExmTw=="
+       ],
+       "X-Amzn-Trace-Id":[
+          "Root=1-5f88cd17-3d912e62529c4102528ae1f0"
+       ],
+       "X-Forwarded-For":[
+          "73.231.31.7, 64.252.173.131"
+       ],
+       "X-Forwarded-Port":[
+          "443"
+       ],
+       "X-Forwarded-Proto":[
+          "https"
+       ]
+    },
+    "queryStringParameters":null,
+    "multiValueQueryStringParameters":null,
+    "pathParameters":null,
+    "stageVariables":null,
+    "requestContext":{
+       "resourceId":"ckoj7m",
+       "authorizer":{
+          "claims":{
+             "sub":"35b3b3b2-b5b0-414a-8596-eb1bf2b2dc54",
+             "email_verified":"true",
+             "iss":"https://cognito-idp.us-east-1.amazonaws.com/us-east-1_2GrBVCFJv",
+             "phone_number_verified":"false",
+             "cognito:username":"pooja",
+             "aud":"6oeo9n8tri6k8e3sgatguu3gov",
+             "event_id":"8f36e875-d067-4086-bd41-491045a97145",
+             "token_use":"id",
+             "auth_time":"1602800896",
+             "phone_number":"+13523281567",
+             "exp":"Thu Oct 15 23:28:16 UTC 2020",
+             "iat":"Thu Oct 15 22:28:16 UTC 2020",
+             "email":"poojaprasannan18@gmail.com"
+          }
+       },
+       "resourcePath":"/items",
+       "httpMethod":"POST",
+       "extendedRequestId":"UeT7vHxsIAMF9Ow=",
+       "requestTime":"15/Oct/2020:22:28:39 +0000",
+       "path":"/newdev/items",
+       "accountId":"339983299383",
+       "protocol":"HTTP/1.1",
+       "stage":"newdev",
+       "domainPrefix":"oie96n6v9e",
+       "requestTimeEpoch":1602800919848,
+       "requestId":"85062ee5-69d4-4c19-92a7-788f7c756fe2",
+       "identity":{
+          "cognitoIdentityPoolId":null,
+          "accountId":null,
+          "cognitoIdentityId":null,
+          "caller":null,
+          "sourceIp":"73.231.31.7",
+          "principalOrgId":null,
+          "accessKey":null,
+          "cognitoAuthenticationType":null,
+          "cognitoAuthenticationProvider":null,
+          "userArn":null,
+          "userAgent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36",
+          "user":null
+       },
+       "domainName":"oie96n6v9e.execute-api.us-east-1.amazonaws.com",
+       "apiId":"oie96n6v9e"
+    },
+    "body":"------WebKitFormBoundaryb5wHOhnA6i4sU9e8\r\nContent-Disposition: form-data; name=\"file\"; filename=\"testnew.txt\"\r\nContent-Type: text/plain\r\n\r\nMy name is pappu sometimes po poo\r\n------WebKitFormBoundaryb5wHOhnA6i4sU9e8\r\nContent-Disposition: form-data; name=\"filedescription\"\r\n\r\nchecking async of headobject\r\n------WebKitFormBoundaryb5wHOhnA6i4sU9e8\r\nContent-Disposition: form-data; name=\"username\"\r\n\r\nundefined\r\n------WebKitFormBoundaryb5wHOhnA6i4sU9e8--\r\n",
+    "isBase64Encoded":false
+ }

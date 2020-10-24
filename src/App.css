@@ -1,10 +1,123 @@
+:root {
+  --app-dark-blue: rgb(43, 57, 71);
+  --app-white: rgb(223,223,223);
+  --app-brown: rgb(117,108,110);
+  --app-blue: #6b949f;
+  --amplify-primary-color: #1d610c;
+  --amplify-primary-tint: #1013b4;
+  --amplify-primary-shade: #1409af;
+  /* --amplify-text-lg: 2.5rem; */
+  --amplify-text-md: 3.5rem;
+  --amplify-text-sm	:1rem
+}
+
+amplify-authenticator{
+  justify-content: center;
+}
+amplify-sign-up{
+  font-size: medium;
+  justify-content: center;
+}
+#sender {
+  background-color: var(--app-brown);
+}
+
+#campaign > h1, h2 {
+  color: var(--app-dark-blue);
+  font-family: 'Bree Serif', serif;
+  font-weight: bold;
+}
+
+
+
+.form-inline label   {
+  display: flex;
+  align-items: center;
+  justify-content: left !important;
+  margin-bottom: 0;
+} 
+textarea.mr-sm-3.form-control {
+ 
+  padding-top: 2rem;
+    padding-right: 7rem;
+    padding-bottom: 2rem;
+    padding-left: 7rem;
+}
+.bin:hover {
+  fill: var(--app-white);
+  cursor: pointer;
+}
+
+/* .form-control {
+  width: 200% ;
+  
+
+} */
+
+  
+.App{
+  text-align: left;
+  
+}
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 0.75rem;
+  color: whitesmoke;
+  background-color: grey ;
+
+}
+.App-header {
+  
+    background-color:#050464;
+    min-height: 100vh;
+    display: flex;
+    flex-direction:column ;
+    align-items: inherit;
+    justify-content: left;
+    font-size: 25px;
+    /* color:black */
+    /* font-size: 6px calc(6px + 2vmin); */
+    color: rgb(255, 255, 255);
+    /* position: absolute; */
+    /* flex:1 */
+  }
+  /* position: absolute;
+  flex: 1 */
+
+.App-body{
+  
+  
+  font-size: calc(8px + 2vmin);
+  color: rgb(255, 255, 255);
+}
+
+/* .container-fluid{
+  width:100%
+} */
+
+
+
+
+/*
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
+}
+
+.App-header {
+  background-color:#101133;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  font-size: calc(10px + 2vmin);
+  color: rgb(255, 255, 255);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,19 +126,10 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+
 
 .App-link {
-  color: #61dafb;
+  color: #fdfdfd;
 }
 
 @keyframes App-logo-spin {
@@ -36,3 +140,4 @@
     transform: rotate(360deg);
   }
 }
+*/

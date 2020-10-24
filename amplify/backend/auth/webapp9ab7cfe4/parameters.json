@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "webapp3854239b_identitypool_3854239b",
+    "identityPoolName": "webapp9ab7cfe4_identitypool_9ab7cfe4",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "webapp3854239b",
-    "userPoolName": "webapp3854239b_userpool_3854239b",
+    "resourceNameTruncated": "webapp9ab7cfe4",
+    "userPoolName": "webapp9ab7cfe4_userpool_9ab7cfe4",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -18,7 +18,9 @@
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
-        "email"
+        "email",
+        "family_name",
+        "name"
     ],
     "userpoolClientGenerateSecret": true,
     "userpoolClientRefreshTokenValidity": 30,
@@ -28,10 +30,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "webapp3854239b_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "webapp9ab7cfe4_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "3854239b",
-    "resourceName": "webapp3854239b",
+    "sharedId": "9ab7cfe4",
+    "resourceName": "webapp9ab7cfe4",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -46,7 +48,12 @@
         ]
     },
     "useDefault": "default",
+    "triggers": "{}",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "permissions": [],
     "dependsOn": []
 }
