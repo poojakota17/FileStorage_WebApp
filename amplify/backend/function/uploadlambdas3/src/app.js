@@ -65,25 +65,15 @@ H6Bz5mqu6rCV/0L6r+6ayNNijnDkJILi5TcN08VDQ3CCFyWwGoqdOCrOPI/czfxA
 dvqKw5ICEHW3bS5lSw7IosiZAJSjl+cD9A3IjC7E+Q+1SaO4EzeJkQ==
 -----END RSA PRIVATE KEY----- `
 
-  //process.env.cloudfront_privatekey.replace(/\\n/gm, '\n');
-  // const cloudFront = new AWS.CloudFront.Signer('APKAIEAXM73CGCK56LNQ', privateKey);
-  // cloudFront.getSignedUrl({
-  //   url: 'https://d2rvkw8krwbi10.cloudfront.net/testnew.txt',
-  //   expires: Math.floor((new Date()).getTime() / 1000) + (60 * 3600 * 1) // Current Time in UTC + time in seconds, (60 * 60 * 1 = 1 hour)
-  // }, (err, url) => {
-  //   if (err) throw err;
-  //   console.log(url);
-  //   //res.json({success: 'get call succeed with signed url!', url: url});
-  // }); */
   const cloudFront = new AWS.CloudFront.Signer('APKAIEAXM73CGCK56LNQ', privateKey);
   con.connect(function (err) {
     let querystring = `SELECT * FROM records.userobjects where username  = '${req.apiGateway.event.requestContext.authorizer.claims['cognito:username']}' `
-    if ((req.apiGateway.event.requestContext.authorizer.claims['custom:Role'] == 'Role') || (req.apiGateway.event.requestContext.authorizer.claims['custom:Role'] == 'role')) {
+    if ((req.apiGateway.event.requestContext.authorizer.claims['custom:Role'] == 'Admin') || (req.apiGateway.event.requestContext.authorizer.claims['custom:Role'] == 'admin')) {
       querystring = `Select * FROM records.userobjects`
     }
     con.query(querystring, function (err, result, fields) {
       if (err) res.send(err);
-      if (result) //res.send(result);
+      if (result) 
         console.log(typeof (result))
       var abc = JSON.parse(JSON.stringify(result));
       for (var i = 0; i < abc.length; i++) {
@@ -117,14 +107,7 @@ const con = mysql.createConnection({
 
 
 app.get('/items/*', function (req, res) {
-  // Add your code here
-  /*con.connect(function(err) {
-    con.query(`SELECT * FROM records.userobjects where username  = ${req.apiGateway.event.requestContext.authorizer.claims['cognito:username']} `, function(err, result, fields) {
-        if (err) res.send(err);
-       if (result) res.send(result);
-        res.json({success: 'get call succeed!', body: result});
-    });
-});*/
+  
   res.json({ success: 'get call succeed!', url: req.url });
 
 });
@@ -148,21 +131,13 @@ app.post('/items', upload.single('file'), function (req, res) {
   console.log(req.file.ContentType);
 
   console.log(req.apiGateway.event.requestContext.authorizer.claims['cognito:username']);
-  //   // con.connect(function(err) {
-  //   //   if (err) throw err;
-  //   //   console.log("Connected to database!");
-  //     //con.end();
-  // });
-
-  //var base64data = new Buffer.from(req.body.toString('utf-8'), 'binary');
+  
 
   const params = {
     Bucket: 'cmpe281hw2',
     Key: req.file.originalname, // File name you want to save as in S3
     Body: req.file.buffer,
     ContentType: req.file.mimetype
-    // ContentEncoding: 'base64'
-
   };
   const params1 = {
     Bucket: 'cmpe281hw2',
@@ -176,11 +151,11 @@ app.post('/items', upload.single('file'), function (req, res) {
           .then(
             result1 => {
 
-              // var query1=""
+              
               con.query(`Select filename FROM records.userobjects WHERE filename  = '${req.file.originalname}' AND username  = '${req.apiGateway.event.requestContext.authorizer.claims['cognito:username']}'`, function (err, result) {
                 console.log('checking result')
                 fname = JSON.parse(JSON.stringify(result));
-                //console.log(fname[0].filename);
+               
                 if (Array.isArray(fname) && fname.length && fname[0].filename == req.file.originalname) {
                   console.log(result);
                   con.query(`UPDATE records.userobjects SET LastModified_time = '${result1.LastModified}', file_description  = '${req.body.filedescription}' WHERE  filename = '${req.file.originalname}' `, function (err, result) {
@@ -198,23 +173,12 @@ app.post('/items', upload.single('file'), function (req, res) {
                 }
               }
               )
-
-
-
-
-              //console.log('retrieving object');
-
-
-
             }
           )
           .catch(error => {
             console.log(error)
             res.json({ body: 'Failed to retrieve', error: error })
           });
-
-        //res.json({success: 'post call succeed!', url: req.url, body: result.Location})
-
       })
 
     .catch(error => {
@@ -229,38 +193,20 @@ async function uploadobject(params) {
 
   const result = await s3.upload(params).promise();//, function(err, data) {
   return result;
-  //console.log(`File uploaded successfully. ${data.Location}`);
-  //res.json({success: 'post call succeed!', url: req.url, body: data.Location})
-  //});
 }
 async function headobject(params) {
-
-  const result1 = await s3.headObject(params).promise();//, function(err, data) {
+const result1 = await s3.headObject(params).promise();//, function(err, data) {
   return result1;
-  //console.log(`File uploaded successfully. ${data.Location}`);
+ 
   //res.json({success: 'post call succeed!', url: req.url, body: data.Location})
-  //});
+  
 }
 async function deleteobject(params) {
 
   const result2 = await s3.deleteObject(params).promise();//, function(err, data) {
   return result2;
-  //console.log(`File uploaded successfully. ${data.Location}`);
-  //res.json({success: 'post call succeed!', url: req.url, body: data.Location})
-  //});
+  
 }
-/*const params1 = {
-  Bucket: 'cmpe281hw2',
-  Key: req.file.originalname
-}
-/*s3.getObject(params1, function(err,data) {
-  if(err){
-    throw err;
-  }
-  console.log('retrieving object');
-  res.json({success: 'get call succeed!', url: req.url, body: data.LastModified})
-})*/
-
 
 app.post('/items/*', function (req, res) {
   // Add your code here
@@ -287,7 +233,7 @@ app.put('/items/*', function (req, res) {
 
 app.delete('/items', function (req, res) {
   // Add your code here
-  // var filename=JSON.stringify(req.body);
+ 
   const params = {
     Bucket: 'cmpe281hw2',
     Key: req.body.filename
