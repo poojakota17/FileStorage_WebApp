@@ -13,7 +13,7 @@ import { Row, Col, Container, Alert } from 'react-bootstrap';
 import awsconfig from './aws-exports';
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 
-
+Amplify.register(Auth)
 Amplify.configure(awsconfig);
 API.configure(config);
 
