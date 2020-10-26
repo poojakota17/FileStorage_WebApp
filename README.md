@@ -1,68 +1,31 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a cloud-native serverless web application using AWS for file storage. It is developed using AWS Amplify which builds and deploys the application. Frontend of this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Backend is using Expressjs framework.
 
-## Available Scripts
+The services used in this project are:
+* Route53 for DNS service.
+* AWS Cognito for authentication.
+* Amplify for hosting application.
+* S3 for storing files.
+* CloudFront for faster downloads.
+* API driven backend using API Gateway.
+* Serverless app leveraging Lambda.
+* Amaon RDS for user updates.
+* CloudWatch and SNS for app health monitoring.
+* CI/CD enabled with Github.
+* Multi region repliation of S3 for Disaster Recovery.
+* Multi AZ deployment of RDS DB Instance.
 
-In the project directory, you can run:
+### Architecture Diagram
 
-### `npm start`
+<img src="Architecture_Diagram.png">
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+#### Features:
+* A Cloud native application.
+* CI/CD enabled with Github.
+* Reduced latency using Amplify(leverages CloudFront).
+* Disaster Recovery using replication of S3 bucket..
+* Faster uploads using S3 Transfer Acceleration.
+* Authentication using Amazon Cognito.
+* App health check using CloudWatch and SNS.
+* Provisioned Concurrency for Lambda(Scaling)
+* Multi-AZ RDS Deployment.
+* Optimized Cost storage using Life Cycle Policy.
