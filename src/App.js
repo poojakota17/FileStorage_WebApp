@@ -49,7 +49,10 @@ class SendTweet extends React.Component {
     // make API call with parameters and use promises to get response
     fetch(url, requestOptions)
       .then(response => response.text())
-      .then(response => alert(response))
+      .then(response => {
+        document.getElementById("uploadCaptureInputFile").value = ""
+        alert(response)
+      })
       .then(result => this.setState({ "result": JSON.parse(result).body }))
       .catch(error => console.log(error))
   }
@@ -78,16 +81,16 @@ class SendTweet extends React.Component {
     })
   }
 
-  myDownloadhandler = (event) => {
-    event.preventDefault();
-    this.callAPI2('GET', 'https://oie96n6v9e.execute-api.us-east-1.amazonaws.com/newdev/items');
+  // myDownloadhandler = (event) => {
+  //   event.preventDefault();
+  //   this.callAPI2('GET', 'https://oie96n6v9e.execute-api.us-east-1.amazonaws.com/newdev/items');
 
-  }
+  // }
   mySubmitHandler = (event) => {
     event.preventDefault();
     if (this.state.selectedFile.size > 10485760) {
       alert("Please select a file less than 10MB!");
-      //alert(this.state.selectedFile.size)
+      document.getElementById("uploadCaptureInputFile").value = "";
     }
     else {
       let data = new FormData();
@@ -104,7 +107,7 @@ class SendTweet extends React.Component {
       <div>
         <Form inline onSubmit={this.mySubmitHandler} role="form">
 
-          <Form.File onChange={this.onChangeHandler} label="Select a file to upload(<10MB): " />
+          <Form.File id="uploadCaptureInputFile" onChange={this.onChangeHandler} label="Select a file to upload(<10MB): " />
 
           <Form.Group>
 
